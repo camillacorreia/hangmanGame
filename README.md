@@ -6,7 +6,11 @@ Projeto final da disciplina de Programação Orientada a Objetos - UFBA - 2022.2
 | --------------- | ----------------------------------------------------------------- |
 | **Professor**   | Rodrigo Rocha                                                     |
 | **Semestre**    | 2022.2                                                            |
-| **Componentes** | Camilla, Lucas, Guilherme e                                       |
+| **Componentes** | Camilla, Lucas, Guilherme e Stéfane                               |
+
+## Documentação
+
+Notion do projeto [aqui](https://www.notion.so/POO-Projeto-Final-199d0d985a4b47f8adc2329aaa3f8af1).
 
 ## Descrição do Projeto
 
