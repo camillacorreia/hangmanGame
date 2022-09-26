@@ -1,5 +1,4 @@
 import pyglet
-
-window = pyglet.window.Window(caption='Alphabet Soup')
+import window.mainWindow
 
 pyglet.app.run()
