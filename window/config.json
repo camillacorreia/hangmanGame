@@ -1,5 +1,5 @@
 {
-  "caption": "Hangman Game",
-  "width": 1280,
-  "height": 720
+  "CAPTION": "Hangman Game",
+  "WIDTH": 1280,
+  "HEIGHT": 720
 }

@@ -4,9 +4,9 @@ import json
 file = open('config.json')
 data = json.load(file)
 
-caption = data['caption']
-width = data['width']
-height = data['height']
+caption = data['CAPTION']
+width = data['WIDTH']
+height = data['HEIGHT']
 
 file.close()
 
