@@ -1,4 +1,4 @@
-# Sopa de Letrinhas
+# Jogo da Forca
 
 Projeto final da disciplina de Programação Orientada a Objetos - UFBA - 2022.2
 
@@ -6,7 +6,7 @@ Projeto final da disciplina de Programação Orientada a Objetos - UFBA - 2022.2
 | --------------- | ----------------------------------------------------------------- |
 | **Professor**   | Rodrigo Rocha                                                     |
 | **Semestre**    | 2022.2                                                            |
-| **Componentes** | Camilla, Lucas, Guilherme e Stéfane                               |
+| **Componentes** | Camilla, Lucas, Guilherme, Stéfane, Yasmin e João                 |
 
 ## Documentação
 
@@ -14,7 +14,7 @@ Notion do projeto [aqui](https://www.notion.so/POO-Projeto-Final-199d0d985a4b47f
 
 ## Descrição do Projeto
 
-O projeto consiste em implementar um jogo similar ao Sopa de Letrinhas na linguagem Python. Exemplo [aqui](https://www.youtube.com/watch?v=yd7bHQnnGy4&ab_channel=RodrigoRochaGomeseSouza).
+O projeto consiste em implementar um jogo similar ao Jogo da Forca na linguagem Python.
 
 ## Iniciando o Projeto
 
