@@ -1,33 +1,31 @@
-{
-  "words": [
-    {
-      "word": "Dalmata",
-      "tip": "Cachorro"
-    },
+[
+  {
+    "word": "Dalmata",
+    "tip": "Cachorro"
+  },
 
-    {
-      "word": "Ufba",
-      "tip": "Universidade"
-    },
+  {
+    "word": "Ufba",
+    "tip": "Universidade"
+  },
 
-    {
-      "word": "Rodrigo",
-      "tip": "Professor"
-    },
+  {
+    "word": "Rodrigo",
+    "tip": "Professor"
+  },
 
-    {
-      "word": "Melancia",
-      "tip": "Fruta"
-    },
+  {
+    "word": "Melancia",
+    "tip": "Fruta"
+  },
 
-    {
-      "word": "Celular",
-      "tip": "Ligação"
-    },
+  {
+    "word": "Celular",
+    "tip": "Ligação"
+  },
 
-    {
-      "word": "Uva",
-      "tip": "Fruta"
-    }
-  ]
-}
+  {
+    "word": "Uva",
+    "tip": "Fruta"
+  }
+]
