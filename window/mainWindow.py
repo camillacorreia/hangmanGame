@@ -10,7 +10,10 @@ height = 720
 
 window = pyglet.window.Window(caption=caption, width=width, height=height)
 window.set_icon(logo)
-background.blit(0, 0)
 
 start = Start(window)
-start.selectWord()
+
+@window.event
+def on_draw():
+  background.blit(0, 0)
+  start.selectWord()

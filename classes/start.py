@@ -22,6 +22,9 @@ class Start:
 
     print(selectWord, selectTip)
     
-    Word(selectWord, self.window)
-    Hang(self.window)
+    word = Word(selectWord, self.window)
+    word.wordLabel.draw()
+
+    hang = Hang(self.window)
+    hang.draw_hang()
        
