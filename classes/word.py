@@ -68,13 +68,11 @@ class Word:
     x = self.window.width // 2 - 200
     y = self.window.height // 2 + 120
 
+    self.hangman = pyglet.graphics.Batch()
+
     if self.wrong > 0:
       self.head = shapes.Circle(
         x, y, 30, color=(255, 255, 255), batch=self.hangman
-    )
-
-    self.head = shapes.Circle(
-      x, y, 30, color=(255, 255, 255), batch=self.hangman
     )
 
     if self.wrong > 1:
