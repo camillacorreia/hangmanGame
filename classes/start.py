@@ -3,6 +3,7 @@ from classes.hang import Hang
 
 import random
 import json
+import string
 
 class Start:
   def __init__(self, window):
@@ -13,18 +14,16 @@ class Start:
   def selectWord(self):
     possible = []
 
-    for i in self.dados:
-      possible.append(i)
+    for word in self.dados:
+      possible.append(word)
   
     selected = possible[random.randint(0, len(possible) - 1)]
-    selectTip = selected['tip']
     selectWord = selected['word']
+    selectTip = selected['tip']
 
     print(selectWord, selectTip)
     
-    word = Word(selectWord, self.window)
-    word.wordLabel.draw()
-
-    hang = Hang(self.window)
-    hang.draw_hang()
+    Word(selectWord, self.window)
+    # Chamar a classe dica Tip(selectTip, self.window)
+    Hang(self.window)
        
