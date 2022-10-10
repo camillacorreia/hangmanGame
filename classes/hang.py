@@ -1,14 +1,16 @@
 import pyglet
 from pyglet import shapes
+from utils import Utils
 
 class Hang:
-  def __init__(self, window):
-    self.window = window
-    self.drawHang()
+  def __init__(self):
+    utils = Utils()
+    self.utils = utils
+    self.draw()
 
-  def drawHang(self):
-    x = self.window.width // 2 - 300
-    y = self.window.height // 2 - 120
+  def draw(self):
+    x = self.utils.width // 2 - 300
+    y = self.utils.height // 2 - 120
 
     self.hang = pyglet.graphics.Batch()
 

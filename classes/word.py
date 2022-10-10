@@ -1,8 +1,12 @@
 import pyglet
 from pyglet import shapes
+from utils import Utils
+
+utils = Utils()
 
 class Word:
-  def __init__(self, correctWord, window):
+  def __init__(self, correctWord):
+
     self.wrong = 0 #Quantas vezes o jogador errou
 
     self.correct = 0 #Quantas vezes o jogador acertou
@@ -12,8 +16,6 @@ class Word:
     self.correctWord = correctWord.lower() #Palavra correta
 
     self.word = ["_" for letter in self.correctWord] #Palavra que está sendo adivinhada
-
-    self.window = window
 
     #Labels do jogo
     self.wordLabel = None
@@ -29,8 +31,8 @@ class Word:
       " ".join(self.word),
       font_name="Config Rounded Bold",
       font_size=56,
-      x=self.window.width // 2,
-      y=self.window.height // 2 - 120,
+      x=utils.width // 2,
+      y=utils.height // 2 - 120,
     )
 
     self.wordLabel.draw()
@@ -40,14 +42,14 @@ class Word:
       font_name="Config Rounded Bold",
       font_size=48,
       color=(255, 46, 52, 255),
-      x=self.window.width // 2,
-      y=self.window.height // 2 - 220,
+      x=utils.width // 2,
+      y=utils.height // 2 - 220,
       anchor_x="center",
       anchor_y="center",
     )
 
     self.triedLabel.draw()
-  
+ 
   def press(self, key):
     if self.wrong <= 5:
       found = False
@@ -63,10 +65,10 @@ class Word:
         self.wrong += 1
 
       self.updateLabel()
-  
+ 
   def drawHangman(self):
-    x = self.window.width // 2 - 200
-    y = self.window.height // 2 + 120
+    x = utils.width // 2 - 200
+    y = utils.height // 2 + 120
 
     self.hangman = pyglet.graphics.Batch()
 
@@ -105,13 +107,13 @@ class Word:
       self.tried = []
       self.word = []
 
-      #Chamar a Classe Winner(self.window)
+      #Chamar a Classe Winner(self.correctWord)
       self.updateLabel()
-    
+   
   def drawLoser(self):
     if self.wrong > 5:
       self.tried = []
       self.word = []
 
-      #Chamar a Classe Loser(self.correctWord, self.window) // Mostrar qual a palavra correta
+      #Chamar a Classe Loser(self.correctWord) // Mostrar qual a palavra correta
       self.updateLabel()

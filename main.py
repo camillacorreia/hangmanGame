@@ -1,4 +1,5 @@
 import pyglet
-import window.mainWindow
+from window.mainWindow import MainWindow
 
+MainWindow()
 pyglet.app.run()
