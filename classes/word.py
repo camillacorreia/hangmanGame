@@ -1,5 +1,5 @@
-import pyglet
 from utils import Utils
+import pyglet
 
 utils = Utils()
 
@@ -19,11 +19,6 @@ class Word:
     #Labels do jogo
     self.wordLabel = None
     self.triedLabel = None
-
-    self.updateLabel()
-    self.drawHangman()
-    self.drawWinner()
-    self.drawLoser()
 
   def updateLabel(self):
     self.wordLabel = pyglet.text.Label(
