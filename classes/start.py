@@ -1,5 +1,4 @@
 from classes.word import Word
-
 import random
 import json
 

@@ -1,5 +1,4 @@
 import pyglet
-from pyglet import shapes
 from utils import Utils
 
 utils = Utils()
@@ -73,30 +72,30 @@ class Word:
     self.hangman = pyglet.graphics.Batch()
 
     if self.wrong > 0:
-      self.head = shapes.Circle(
+      self.head = pyglet.shapes.Circle(
         x, y, 30, color=(255, 255, 255), batch=self.hangman
     )
 
     if self.wrong > 1:
-      self.body = shapes.Line(x, y, x, y - 120, width=5, batch=self.hangman)
+      self.body = pyglet.shapes.Line(x, y, x, y - 120, width=5, batch=self.hangman)
 
     if self.wrong > 2:
-      self.arm_1 = shapes.Line(
+      self.arm_1 = pyglet.shapes.Line(
         x, y - 50, x - 40, y - 100, width=5, batch=self.hangman
       )
 
     if self.wrong > 3:
-      self.arm_2 = shapes.Line(
+      self.arm_2 = pyglet.shapes.Line(
         x, y - 50, x + 40, y - 100, width=5, batch=self.hangman
       )
 
     if self.wrong > 4:
-      self.leg_1 = shapes.Line(
+      self.leg_1 = pyglet.shapes.Line(
         x, y - 120, x - 40, y - 200, width=5, batch=self.hangman
       )
 
     if self.wrong > 5:
-      self.leg_2 = shapes.Line(
+      self.leg_2 = pyglet.shapes.Line(
         x, y - 120, x + 40, y - 200, width=5, batch=self.hangman
       )
 
