@@ -4,7 +4,6 @@ from utils import Utils
 class Hang:
   def __init__(self):
     self.utils = Utils()
-    self.draw()
 
   def draw(self):
     x = self.utils.width // 2 - 300
