@@ -17,7 +17,5 @@ class Start:
     selected = possible[random.randint(0, len(possible) - 1)]
     selectWord = selected['word']
     selectTip = selected['tip']
-
-    print(selectWord, selectTip)
    
     return Word(selectWord), Tip(selectTip)

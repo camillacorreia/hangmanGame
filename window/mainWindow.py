@@ -25,5 +25,4 @@ class MainWindow(pyglet.window.Window):
 
   def on_key_press(self, symbol, modifiers):
     if chr(symbol) in string.ascii_lowercase:
-      print(chr(symbol))
       self.word.press(chr(symbol))
