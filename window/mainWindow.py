@@ -20,8 +20,8 @@ class MainWindow(pyglet.window.Window):
     self.hang.drawHangman(self.word.getWrong())
     self.word.updateLabel()
     self.tip.draw()
-    ## self.word.drawWinner()
-    ## self.word.drawLoser()
+    ## self.winner.draw()
+    ## self.loser.draw()
 
   def on_key_press(self, symbol, modifiers):
     if chr(symbol) in string.ascii_lowercase:
