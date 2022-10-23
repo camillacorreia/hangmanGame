@@ -1,4 +1,5 @@
 from utils import Utils
+from classes.hang import Hang
 import pyglet
 
 utils = Utils()
@@ -59,42 +60,6 @@ class Word:
         self.wrong += 1
 
       self.updateLabel()
- 
-  def drawHangman(self):
-    x = utils.width // 2 - 200
-    y = utils.height // 2 + 120
-
-    self.hangman = pyglet.graphics.Batch()
-
-    if self.wrong > 0:
-      self.head = pyglet.shapes.Circle(
-        x, y, 30, color=(255, 255, 255), batch=self.hangman
-    )
-
-    if self.wrong > 1:
-      self.body = pyglet.shapes.Line(x, y, x, y - 120, width=5, batch=self.hangman)
-
-    if self.wrong > 2:
-      self.arm_1 = pyglet.shapes.Line(
-        x, y - 50, x - 40, y - 100, width=5, batch=self.hangman
-      )
-
-    if self.wrong > 3:
-      self.arm_2 = pyglet.shapes.Line(
-        x, y - 50, x + 40, y - 100, width=5, batch=self.hangman
-      )
-
-    if self.wrong > 4:
-      self.leg_1 = pyglet.shapes.Line(
-        x, y - 120, x - 40, y - 200, width=5, batch=self.hangman
-      )
-
-    if self.wrong > 5:
-      self.leg_2 = pyglet.shapes.Line(
-        x, y - 120, x + 40, y - 200, width=5, batch=self.hangman
-      )
-
-    self.hangman.draw()
 
   def drawWinner(self):
     if self.correct == len(self.correctWord):
@@ -111,3 +76,6 @@ class Word:
 
       #Chamar a Classe Loser(self.correctWord) // Mostrar qual a palavra correta
       self.updateLabel()
+  
+  def getWrong(self):
+    return self.wrong
