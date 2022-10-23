@@ -1,5 +1,4 @@
 from utils import Utils
-from classes.hang import Hang
 import pyglet
 
 utils = Utils()
