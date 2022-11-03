@@ -26,9 +26,9 @@ class Pontuacao:
 
         self.pontuacao = pyglet.text.Label(
         
-            f"Pontos:{str(self.pont)}",
+            f"Pontos: {str(self.pont)}",
             font_name="Config Rounded Bold",
-            font_size=48,
+            font_size=45,
             color=(59,177,210,255),
             x=self.utils.width // 7,
             y=self.utils.height // 5 ,

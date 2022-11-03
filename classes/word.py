@@ -33,6 +33,7 @@ class Word:
     )
 
     self.wordLabel.draw()
+    self.pontuacao.draw()
 
     self.triedLabel = pyglet.text.Label(
       " ".join(list(self.tried)),
