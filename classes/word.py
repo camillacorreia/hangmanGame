@@ -1,5 +1,6 @@
 from utils import Utils
 import pyglet
+from classes.pontuacao import Pontuacao
 
 utils = Utils()
 
@@ -15,6 +16,8 @@ class Word:
     self.correctWord = correctWord.lower() #Palavra correta
 
     self.word = ["_" for letter in self.correctWord] #Palavra que está sendo adivinhada
+
+    self.pontuacao = Pontuacao(0,0)
 
     #Labels do jogo
     self.wordLabel = None
@@ -59,6 +62,7 @@ class Word:
         self.wrong += 1
 
       self.updateLabel()
+      self.pontuacao = Pontuacao(self.correct,self.wrong)
 
   def drawWinner(self):
     if self.correct == len(self.correctWord):
