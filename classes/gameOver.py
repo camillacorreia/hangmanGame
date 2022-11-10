@@ -5,7 +5,7 @@ class GameOver:
    def __init__(self):
       self.utils = Utils()
 
-   def draw(self, correctWord):
+   def draw(self, correctWord: str):
       x = self.utils.width // 2 + 225
       y = self.utils.height // 2 + 100
 
@@ -46,7 +46,7 @@ class GameOver:
       self.pressEnter.draw()
       self.correctWord.draw()
 
-   def press(self, key):
+   def press(self, key: str):
       if(key == '－'):
          pyglet.app.exit()
 

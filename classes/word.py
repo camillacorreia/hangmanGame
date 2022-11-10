@@ -17,8 +17,6 @@ class Word:
 
       self.word = ["_" for letter in self.correctWord] #Palavra que está sendo adivinhada
 
-      self.gameOver = GameOver()
-
       #Labels do jogo
       self.wordLabel = None
       self.triedLabel = None

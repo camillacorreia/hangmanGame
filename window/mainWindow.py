@@ -5,7 +5,6 @@ from classes.start import Start
 from classes.hang import Hang
 from classes.gameOver import GameOver
 
-
 class MainWindow(pyglet.window.Window):
    def __init__(self):
       self.utils = Utils()
