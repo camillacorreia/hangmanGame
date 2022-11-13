@@ -51,7 +51,6 @@ class Word:
     )
 
     self.triedLabel.draw()
-    
  
   def press(self, key):
     if self.wrong <= 5:
