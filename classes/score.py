@@ -11,7 +11,6 @@ class Score:
         self.rightLetters = []
         self.countLetter = 0
     
-    
     def CalculaScore(self,wrong:int,word:str,key:str):
 
         cont = 0
