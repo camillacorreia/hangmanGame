@@ -11,8 +11,7 @@ class Score:
         self.rightLetters = []
         self.countLetter = 0
     
-    def CalculaScore(self,wrong:int,word:str,key:str):
-
+    def CalculateScore(self,wrong:int,word:str,key:str):
         cont = 0
 
         for i in word:
@@ -32,16 +31,13 @@ class Score:
         if (self.errors > self.hits):
             self.countErrors = self.countErrors + 1
             self.pont = 0
-
         else:
             self.pont = self.hits - self.errors
 
         return self.pont
-        
+    
     def draw(self):
-        
         self.score = pyglet.text.Label(
-        
             f"Pontos: {str(self.pont)}",
             font_name="Config Rounded Bold",
             font_size=44,
@@ -52,4 +48,3 @@ class Score:
             anchor_y="center",
         )
         self.score.draw()
-
