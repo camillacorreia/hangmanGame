@@ -21,7 +21,6 @@ class Word:
     
     self.errors = 0 
 
-
     #Labels do jogo
     self.wordLabel = None
     self.triedLabel = None
@@ -33,7 +32,6 @@ class Word:
       font_size=56,
       x=utils.width // 2,
       y=utils.height // 2 - 120,
-      
     )
 
     self.wordLabel.draw()
@@ -61,7 +59,6 @@ class Word:
           found = True
           self.correct += 1
 
-
       if not found:
         if key not in self.tried:
           self.tried.append(key)
@@ -69,7 +66,7 @@ class Word:
         self.wrong += 1
       
       self.updateLabel()
-      self.score.CalculaScore(self.errors,self.correctWord,key)
+      self.score.CalculateScore(self.errors,self.correctWord,key)
 
   def drawWinner(self):
     if self.correct == len(self.correctWord):
@@ -89,5 +86,3 @@ class Word:
   
   def getWrong(self):
     return self.wrong
-
-
