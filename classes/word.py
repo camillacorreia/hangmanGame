@@ -1,5 +1,6 @@
 from utils import Utils
 import pyglet
+from classes.score import Score
 
 utils = Utils()
 
@@ -16,6 +17,10 @@ class Word:
 
     self.word = ["_" for letter in self.correctWord] #Palavra que está sendo adivinhada
 
+    self.score = Score()
+    
+    self.errors = 0 
+
     #Labels do jogo
     self.wordLabel = None
     self.triedLabel = None
@@ -30,6 +35,7 @@ class Word:
     )
 
     self.wordLabel.draw()
+    self.score.draw()
 
     self.triedLabel = pyglet.text.Label(
       " ".join(list(self.tried)),
@@ -56,9 +62,11 @@ class Word:
       if not found:
         if key not in self.tried:
           self.tried.append(key)
+          self.errors += 1
         self.wrong += 1
-
+      
       self.updateLabel()
+      self.score.CalculateScore(self.errors,self.correctWord,key)
 
   def drawWinner(self):
     if self.correct == len(self.correctWord):
