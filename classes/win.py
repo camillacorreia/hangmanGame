@@ -34,4 +34,3 @@ class Win:
       self.win.draw()
       self.enter.draw()
       #self.pointGame.draw() Para desenhar futuramente a pontução do jogador
-      
