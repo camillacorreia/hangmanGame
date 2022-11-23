@@ -1,6 +1,7 @@
 from utils import Utils
 import pyglet
 from classes.gameOver import GameOver
+from classes.score import Score
 
 utils = Utils()
 
@@ -20,6 +21,13 @@ class Word:
       #Labels do jogo
       self.wordLabel = None
       self.triedLabel = None
+      self.score = Score()
+    
+      self.errors = 0 
+
+      #Labels do jogo
+      self.wordLabel = None
+      self.triedLabel = None
 
    def updateLabel(self):
       self.wordLabel = pyglet.text.Label(
@@ -31,6 +39,8 @@ class Word:
       )
 
       self.wordLabel.draw()
+      self.wordLabel.draw()
+      self.score.draw()
 
       self.triedLabel = pyglet.text.Label(
          " ".join(list(self.tried)),
@@ -44,6 +54,33 @@ class Word:
       )
 
       self.triedLabel.draw()
+      self.triedLabel.draw()
+ 
+   def press(self, key):
+      if self.wrong <= 5:
+         found = False
+         for i in range(len(self.correctWord)):
+            if self.correctWord[i] == key:
+               self.word[i] = key
+               found = True
+               self.correct += 1
+
+         if not found:
+            if key not in self.tried:
+               self.tried.append(key)
+               self.errors += 1
+            self.wrong += 1
+         
+         self.updateLabel()
+         self.score.CalculateScore(self.errors,self.correctWord,key)
+
+   def drawWinner(self):
+      if self.correct == len(self.correctWord):
+         self.tried = []
+         self.word = []
+
+         #Chamar a Classe Winner(self.correctWord)
+         self.updateLabel()
    
    def press(self, key: str):
       if self.wrong <= 5:
