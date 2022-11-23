@@ -25,7 +25,7 @@ class MainWindow(pyglet.window.Window):
       if(self.word.getWrong() > 5):
          self.gameOver.draw(self.word.getCorrectWord())
 
-   def on_key_press(self, symbol, modifiers):
+   def on_key_press(self, symbol: str, modifiers: str):
       if chr(symbol) in string.ascii_lowercase:
          self.word.press(chr(symbol))
       if(self.word.getWrong() == 6):

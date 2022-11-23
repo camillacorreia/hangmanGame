@@ -21,7 +21,7 @@ class Hang:
 
       self.hang.draw()
 
-   def drawHangman(self, wrong):
+   def drawHangman(self, wrong: int):
       x = self.utils.width // 2 - 200
       y = self.utils.height // 2 + 120
 

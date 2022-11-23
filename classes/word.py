@@ -5,7 +5,7 @@ from classes.gameOver import GameOver
 utils = Utils()
 
 class Word:
-   def __init__(self, correctWord):
+   def __init__(self, correctWord: str):
 
       self.wrong = 0 #Quantas vezes o jogador errou
 
@@ -45,7 +45,7 @@ class Word:
 
       self.triedLabel.draw()
    
-   def press(self, key):
+   def press(self, key: str):
       if self.wrong <= 5:
          found = False
          for i in range(len(self.correctWord)):
