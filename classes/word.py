@@ -2,8 +2,6 @@ from utils import Utils
 import pyglet
 from classes.score import Score
 
-utils = Utils()
-
 class Word:
   def __init__(self, correctWord):
 
@@ -30,8 +28,8 @@ class Word:
       " ".join(self.word),
       font_name="Config Rounded Bold",
       font_size=56,
-      x=utils.width // 2,
-      y=utils.height // 2 - 120,
+      x=Utils.WIDTH // 2,
+      y=Utils.HEIGHT // 2 - 120,
     )
 
     self.wordLabel.draw()
@@ -42,8 +40,8 @@ class Word:
       font_name="Config Rounded Bold",
       font_size=48,
       color=(255, 46, 52, 255),
-      x=utils.width // 2,
-      y=utils.height // 2 - 220,
+      x=Utils.WIDTH // 2,
+      y=Utils.HEIGHT // 2 - 220,
       anchor_x="center",
       anchor_y="center",
     )

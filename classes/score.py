@@ -1,9 +1,8 @@
-from utils import Utils
 import pyglet
+from utils import Utils
 
 class Score:
     def __init__(self):
-        self.utils = Utils()
         self.pont = 0
         self.countErrors = 0
         self.errors = 0
@@ -42,8 +41,8 @@ class Score:
             font_name="Config Rounded Bold",
             font_size=44,
             color=(59,177,210,255),
-            x=self.utils.width // 6,
-            y=self.utils.height // 5 ,
+            x=Utils.WIDTH // 6,
+            y=Utils.HEIGHT // 5 ,
             anchor_x="center",
             anchor_y="center",
         )

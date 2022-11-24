@@ -3,12 +3,11 @@ from utils import Utils
 
 class Tip:
   def __init__(self, tip):
-    self.utils = Utils()
     self.wordTip = tip
 
   def draw(self):
-    x = self.utils.width // 2
-    y = self.utils.height // 2 + 300
+    x = Utils.WIDTH // 2
+    y = Utils.HEIGHT // 2 + 300
 
     self.tip = pyglet.text.Label(
       f"Dica: {self.wordTip}",

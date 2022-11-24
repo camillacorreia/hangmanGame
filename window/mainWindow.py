@@ -6,16 +6,14 @@ from classes.hang import Hang
 
 class MainWindow(pyglet.window.Window):
   def __init__(self):
-    self.utils = Utils()
-    
-    super().__init__(self.utils.width, self.utils.height, caption=self.utils.caption, resizable=self.utils.resizable)
+    super().__init__(Utils.WIDTH, Utils.HEIGHT, caption=Utils.CAPTION, resizable=Utils.RESIZABLE)
     
     self.start = Start()
     self.word, self.tip = self.start.selectWord()
     self.hang = Hang()
 
   def on_draw(self):
-    self.utils.background.blit(0, 0)
+    Utils.BACKGROUND.blit(0, 0)
     self.hang.draw()
     self.hang.drawHangman(self.word.getWrong())
     self.word.updateLabel()
