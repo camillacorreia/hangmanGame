@@ -1,37 +1,35 @@
-from utils import Utils
 import pyglet
+from utils import Utils
 from classes.score import Score
 
-utils = Utils()
-
 class Word:
-  def __init__(self, correctWord):
+  def __init__(self, correctWord: str):
 
-    self.wrong = 0 #Quantas vezes o jogador errou
+    self.wrong: int = 0 #Quantas vezes o jogador errou
 
-    self.correct = 0 #Quantas vezes o jogador acertou
+    self.correct: int = 0 #Quantas vezes o jogador acertou
 
-    self.tried = [] #Quais letras foram tentadas
+    self.tried: list[str] = [] #Quais letras foram tentadas
 
-    self.correctWord = correctWord.lower() #Palavra correta
+    self.correctWord: str = correctWord.lower() #Palavra correta
 
-    self.word = ["_" for letter in self.correctWord] #Palavra que está sendo adivinhada
+    self.word: str = ["_" for letter in self.correctWord] #Palavra que está sendo adivinhada
 
-    self.score = Score()
+    self.score: Score = Score()
     
-    self.errors = 0 
+    self.errors: int = 0 
 
     #Labels do jogo
     self.wordLabel = None
     self.triedLabel = None
 
-  def updateLabel(self):
+  def updateLabel(self) -> None:
     self.wordLabel = pyglet.text.Label(
       " ".join(self.word),
       font_name="Config Rounded Bold",
       font_size=56,
-      x=utils.width // 2,
-      y=utils.height // 2 - 120,
+      x=Utils.WIDTH // 2,
+      y=Utils.HEIGHT // 2 - 120,
     )
 
     self.wordLabel.draw()
@@ -42,17 +40,18 @@ class Word:
       font_name="Config Rounded Bold",
       font_size=48,
       color=(255, 46, 52, 255),
-      x=utils.width // 2,
-      y=utils.height // 2 - 220,
+      x=Utils.WIDTH // 2,
+      y=Utils.HEIGHT // 2 - 220,
       anchor_x="center",
       anchor_y="center",
     )
 
     self.triedLabel.draw()
  
-  def press(self, key):
+  def press(self, key: str) -> None:
     if self.wrong <= 5:
-      found = False
+      found: bool = False
+
       for i in range(len(self.correctWord)):
         if self.correctWord[i] == key:
           self.word[i] = key
@@ -66,9 +65,9 @@ class Word:
         self.wrong += 1
       
       self.updateLabel()
-      self.score.CalculateScore(self.errors,self.correctWord,key)
+      self.score.calculateScore(self.errors, self.correctWord, key)
 
-  def drawWinner(self):
+  def drawWinner(self) -> None:
     if self.correct == len(self.correctWord):
       self.tried = []
       self.word = []
@@ -76,7 +75,7 @@ class Word:
       #Chamar a Classe Winner(self.correctWord)
       self.updateLabel()
    
-  def drawLoser(self):
+  def drawLoser(self) -> None:
     if self.wrong > 5:
       self.tried = []
       self.word = []
@@ -84,5 +83,5 @@ class Word:
       #Chamar a Classe Loser(self.correctWord) // Mostrar qual a palavra correta
       self.updateLabel()
   
-  def getWrong(self):
+  def getWrong(self) -> int:
     return self.wrong
