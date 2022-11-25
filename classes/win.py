@@ -6,10 +6,9 @@ class Win:
       self.utils = Utils()
 
    def draw(self):
-      
-      x = self.utils.width
-      y = self.utils.height 
 
+      x = self.utils.width
+      y = self.utils.height
       self.win = pyglet.text.Label(
          f"Você venceu! Parabéns!",
          font_name="Config Rounded Bold",
@@ -20,7 +19,6 @@ class Win:
          anchor_x="center",
          anchor_y="center",
       )
-
       self.enter = pyglet.text.Label(
          f"Pressione enter para sair",
          font_name="Config Rounded Bold",
@@ -31,7 +29,6 @@ class Win:
          anchor_x="center",
          anchor_y="center",
       )
-
       self.win.draw()
       self.enter.draw()
       #self.pointGame.draw() Para desenhar futuramente a pontução do jogador
