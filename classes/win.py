@@ -6,6 +6,7 @@ class Win:
       self.utils = Utils()
 
    def draw(self):
+      
       x = self.utils.width
       y = self.utils.height 
 
