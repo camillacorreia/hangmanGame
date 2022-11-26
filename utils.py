@@ -1,26 +1,10 @@
 import pyglet
+from typing import Any
 
-class Utils(object):
-  @property
-  def width(self):
-    return 1280
-
-  @property
-  def height(self):
-    return 720
-
-  @property
-  def caption(self):
-    return "Hangman Game"
-
-  @property
-  def resizable(self):
-    return False
-
-  @property
-  def background(self):
-    return pyglet.resource.image("assets/images/background.png")
-  
-  @property
-  def logo(self):
-    return pyglet.resource.image("assets/images/icon.png")
+class Utils:
+  CAPTION: str = "Hangman Game"
+  WIDTH: int = 1280
+  HEIGHT: int = 720
+  RESIZABLE: bool = False
+  LOGO: Any = pyglet.resource.image("assets/images/icon.png")
+  BACKGROUND: Any = pyglet.resource.image("assets/images/background.png")

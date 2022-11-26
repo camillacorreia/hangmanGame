@@ -2,12 +2,9 @@ import pyglet
 from utils import Utils
 
 class Hang:
-   def __init__(self):
-      self.utils = Utils()
-
-   def draw(self):
-      x = self.utils.width // 2 - 300
-      y = self.utils.height // 2 - 120
+   def draw(self) -> None:
+      x: int = Utils.WIDTH // 2 - 300
+      y: int = Utils.HEIGHT // 2 - 120
 
       self.hang = pyglet.graphics.Batch()
 
@@ -20,10 +17,10 @@ class Hang:
       )
 
       self.hang.draw()
-
-   def drawHangman(self, wrong: int):
-      x = self.utils.width // 2 - 200
-      y = self.utils.height // 2 + 120
+  
+   def drawHangman(self, wrong: int) -> None:
+      x: int = Utils.WIDTH // 2 - 200
+      y: int = Utils.HEIGHT // 2 + 120
 
       self.hangman = pyglet.graphics.Batch()
 

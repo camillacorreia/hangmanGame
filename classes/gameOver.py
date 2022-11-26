@@ -2,12 +2,9 @@ import pyglet
 from utils import Utils
 
 class GameOver:
-   def __init__(self):
-      self.utils = Utils()
-
    def draw(self, correctWord: str):
-      x = self.utils.width // 2 + 225
-      y = self.utils.height // 2 + 100
+      x: int = Utils.WIDTH  // 2 + 225
+      y: int = Utils.HEIGHT // 2 + 100
 
       self.gameOver = pyglet.text.Label(
          f"Game over",
