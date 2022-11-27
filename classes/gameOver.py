@@ -42,7 +42,3 @@ class GamerOver:
       self.gameOver.draw()
       self.pressEnter.draw()
       self.correctWord.draw()
-
-   def press(self, key: str):
-      if(key == '－'):
-        pyglet.app.exit()

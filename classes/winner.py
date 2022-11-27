@@ -42,7 +42,3 @@ class Winner:
       self.winner.draw()
       self.pressEnter.draw()
       self.correctWord.draw()
-
-   def press(self, key: str):
-      if(key == '－'):
-        pyglet.app.exit()

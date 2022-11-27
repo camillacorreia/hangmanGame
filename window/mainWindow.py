@@ -24,3 +24,5 @@ class MainWindow(pyglet.window.Window):
   def on_key_press(self, symbol, modifiers) -> None:
     if chr(symbol) in string.ascii_lowercase:
       self.word.press(chr(symbol))
+    if (self.word.drawWinner() or self.word.drawLoser()) and chr(symbol) == '－':
+      pyglet.app.exit()

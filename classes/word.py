@@ -73,19 +73,29 @@ class Word:
       self.updateLabel()
       self.score.calculateScore(self.errors, self.correctWord, key)
 
-  def drawWinner(self) -> None:
+  def drawWinner(self) -> bool:
+    flagWinner: bool = False
+
     if self.correct == len(self.correctWord):
       self.tried = []
       self.word = []
 
       self.winner.draw(self.correctWord)
+      flagWinner = True
+
+    return flagWinner
    
-  def drawLoser(self) -> None:
+  def drawLoser(self) -> bool:
+    flagLoser: bool = False
+
     if self.wrong > 5:
       self.tried = []
       self.word = []
 
       self.gameOver.draw(self.correctWord)
+      flagLoser = True
+    
+    return flagLoser
   
   def getWrong(self) -> int:
     return self.wrong
