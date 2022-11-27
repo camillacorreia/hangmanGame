@@ -1,6 +1,8 @@
 import pyglet
 from utils import Utils
 from classes.score import Score
+from classes.winner import Winner
+from classes.gameOver import GameOver
 
 class Word:
   def __init__(self, correctWord: str):
@@ -16,6 +18,10 @@ class Word:
     self.word: str = ["_" for letter in self.correctWord] #Palavra que está sendo adivinhada
 
     self.score: Score = Score()
+
+    self.winner: Winner = Winner()
+
+    self.gameOver: GameOver = GameOver()
     
     self.errors: int = 0 
 
@@ -67,21 +73,29 @@ class Word:
       self.updateLabel()
       self.score.calculateScore(self.errors, self.correctWord, key)
 
-  def drawWinner(self) -> None:
+  def drawWinner(self) -> bool:
+    flagWinner: bool = False
+
     if self.correct == len(self.correctWord):
       self.tried = []
       self.word = []
 
-      #Chamar a Classe Winner(self.correctWord)
-      self.updateLabel()
+      self.winner.draw(self.correctWord)
+      flagWinner = True
+
+    return flagWinner
    
-  def drawLoser(self) -> None:
+  def drawLoser(self) -> bool:
+    flagLoser: bool = False
+
     if self.wrong > 5:
       self.tried = []
       self.word = []
 
-      #Chamar a Classe Loser(self.correctWord) // Mostrar qual a palavra correta
-      self.updateLabel()
+      self.gameOver.draw(self.correctWord)
+      flagLoser = True
+    
+    return flagLoser
   
   def getWrong(self) -> int:
     return self.wrong
