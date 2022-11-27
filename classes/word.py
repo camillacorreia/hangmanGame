@@ -22,14 +22,9 @@ class Word:
 
         self.winner: Winner = Winner()
 
-<<<<<<< HEAD
         self.gameOver: GameOver = GameOver()
-=======
-    self.gameOver: GameOver = GameOver()
->>>>>>> 3d3a381c3ab6477da84a4e18189f7df93aa52b46
 
         self.errors: int = 0
-
 
         # Labels do jogo
         self.wordLabel = None
@@ -41,7 +36,7 @@ class Word:
     def set_correct(self):
         self.__correct += 1
 
-<<<<<<< HEAD
+
     def updateLabel(self) -> None:
         self.wordLabel = pyglet.text.Label(
             " ".join(self.word),
@@ -55,44 +50,40 @@ class Word:
         self.score.draw()
 
         self.triedLabel = pyglet.text.Label(
-            " ".join(list(self.tried)),
-            font_name="Config Rounded Bold",
-            font_size=48,
-            color=(255, 46, 52, 255),
-            x=Utils.WIDTH // 2,
-            y=Utils.HEIGHT // 2 - 220,
-            anchor_x="center",
-            anchor_y="center",
+          " ".join(list(self.tried)),
+          font_name="Config Rounded Bold",
+          font_size=48,
+          color=(255, 46, 52, 255),
+          x=Utils.WIDTH // 2,
+          y=Utils.HEIGHT // 2 - 220,
+          anchor_x="center",
+          anchor_y="center",
         )
-
         self.triedLabel.draw()
-=======
-    self.triedLabel.draw()
- 
-  def press(self, key: str) -> None:
-    try:
-      if self.wrong <= 5:
-        found: bool = False
 
-        for i in range(len(self.correctWord)):
-          if self.correctWord[i] == key:
-            self.word[i] = key
-            found = True
-            self.correct += 1
+    def press(self, key: str) -> None:
+      try:
+        if self.wrong <= 5:
+          found: bool = False
 
-        if not found:
-          if key not in self.tried:
-            self.tried.append(key)
-            self.wrong += 1
-        
-        self.updateLabel()
-        self.score.calculateScore(self.wrong, self.correctWord, key)
-    except:
-      raise ValueError("Jogo não iniciado")
-      
-  def drawWinner(self) -> bool:
-    flagWinner: bool = False
->>>>>>> 3d3a381c3ab6477da84a4e18189f7df93aa52b46
+          for i in range(len(self.correctWord)):
+            if self.correctWord[i] == key:
+              self.word[i] = key
+              found = True
+              self.correct += 1
+
+          if not found:
+            if key not in self.tried:
+              self.tried.append(key)
+              self.wrong += 1
+
+          self.updateLabel()
+          self.score.calculateScore(self.wrong, self.correctWord, key)
+      except:
+        raise ValueError("Jogo não iniciado")
+
+    def drawWinner(self) -> bool:
+      flagWinner: bool = False
 
     def press(self, key: str) -> None:
         if self.__wrong <= 5:
