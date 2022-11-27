@@ -5,8 +5,11 @@ from classes.tip import Tip
 
 class Start:
   def __init__(self):
-    with open("databases/words.json", encoding="utf-8") as databaseWords:
-      self.dados = json.load(databaseWords)
+    try:
+      with open("databases/words.json", encoding='utf-8') as databaseWords:
+        self.dados = json.load(databaseWords)
+    except:
+      raise ValueError("Arquivo não encontrado")
 
   def selectWord(self) -> tuple[Word, Tip]:
     possible: list[dict[str, str]] = []
