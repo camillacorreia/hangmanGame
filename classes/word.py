@@ -2,7 +2,7 @@ import pyglet
 from utils import Utils
 from classes.score import Score
 from classes.winner import Winner
-from classes.gameOver import GamerOver
+from classes.gameOver import GameOver
 
 class Word:
   def __init__(self, correctWord: str):
@@ -21,7 +21,7 @@ class Word:
 
     self.winner: Winner = Winner()
 
-    self.gameOver: GamerOver = GamerOver()
+    self.gameOver: GameOver = GameOver()
     
     self.errors: int = 0 
 

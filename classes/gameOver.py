@@ -1,7 +1,7 @@
 import pyglet
 from utils import Utils
 
-class GamerOver:
+class GameOver:
    def draw(self, correctWord: str):
       x: int = Utils.WIDTH  // 2 + 225
       y: int = Utils.HEIGHT // 2 + 100
