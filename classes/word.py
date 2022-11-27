@@ -22,8 +22,6 @@ class Word:
     self.winner: Winner = Winner()
 
     self.gameOver: GameOver = GameOver()
-    
-    self.errors: int = 0 
 
     #Labels do jogo
     self.wordLabel = None
@@ -55,24 +53,26 @@ class Word:
     self.triedLabel.draw()
  
   def press(self, key: str) -> None:
-    if self.wrong <= 5:
-      found: bool = False
+    try:
+      if self.wrong <= 5:
+        found: bool = False
 
-      for i in range(len(self.correctWord)):
-        if self.correctWord[i] == key:
-          self.word[i] = key
-          found = True
-          self.correct += 1
+        for i in range(len(self.correctWord)):
+          if self.correctWord[i] == key:
+            self.word[i] = key
+            found = True
+            self.correct += 1
 
-      if not found:
-        if key not in self.tried:
-          self.tried.append(key)
-          self.errors += 1
-        self.wrong += 1
+        if not found:
+          if key not in self.tried:
+            self.tried.append(key)
+            self.wrong += 1
+        
+        self.updateLabel()
+        self.score.calculateScore(self.wrong, self.correctWord, key)
+    except:
+      raise ValueError("Jogo não iniciado")
       
-      self.updateLabel()
-      self.score.calculateScore(self.errors, self.correctWord, key)
-
   def drawWinner(self) -> bool:
     flagWinner: bool = False
 
