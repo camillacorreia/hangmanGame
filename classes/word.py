@@ -32,7 +32,6 @@ class Word:
       )
 
       self.wordLabel.draw()
-      self.wordLabel.draw()
       self.score.draw()
 
       self.triedLabel = pyglet.text.Label(
@@ -46,7 +45,6 @@ class Word:
          anchor_y="center",
       )
 
-      self.triedLabel.draw()
       self.triedLabel.draw()
  
    def press(self, key: str) -> None:
@@ -63,7 +61,7 @@ class Word:
                if key not in self.tried:
                   self.tried.append(key)
                   self.errors += 1
-               self.wrong += 1
+                  self.wrong += 1
             
             self.updateLabel()
             self.score.calculateScore(self.errors, self.correctWord, key)
