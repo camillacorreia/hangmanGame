@@ -30,6 +30,7 @@ class Word:
         self.wordLabel = None
         self.triedLabel = None
 
+
     def set_wrong(self):
         self.__wrong += 1
     def set_correct(self):
