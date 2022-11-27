@@ -22,7 +22,11 @@ class Word:
 
         self.winner: Winner = Winner()
 
+<<<<<<< HEAD
         self.gameOver: GameOver = GameOver()
+=======
+    self.gameOver: GameOver = GameOver()
+>>>>>>> 3d3a381c3ab6477da84a4e18189f7df93aa52b46
 
         self.errors: int = 0
 
@@ -36,6 +40,7 @@ class Word:
     def set_correct(self):
         self.__correct += 1
 
+<<<<<<< HEAD
     def updateLabel(self) -> None:
         self.wordLabel = pyglet.text.Label(
             " ".join(self.word),
@@ -60,6 +65,33 @@ class Word:
         )
 
         self.triedLabel.draw()
+=======
+    self.triedLabel.draw()
+ 
+  def press(self, key: str) -> None:
+    try:
+      if self.wrong <= 5:
+        found: bool = False
+
+        for i in range(len(self.correctWord)):
+          if self.correctWord[i] == key:
+            self.word[i] = key
+            found = True
+            self.correct += 1
+
+        if not found:
+          if key not in self.tried:
+            self.tried.append(key)
+            self.wrong += 1
+        
+        self.updateLabel()
+        self.score.calculateScore(self.wrong, self.correctWord, key)
+    except:
+      raise ValueError("Jogo não iniciado")
+      
+  def drawWinner(self) -> bool:
+    flagWinner: bool = False
+>>>>>>> 3d3a381c3ab6477da84a4e18189f7df93aa52b46
 
     def press(self, key: str) -> None:
         if self.__wrong <= 5:
