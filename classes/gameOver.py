@@ -10,7 +10,7 @@ class GameOver:
         f"Game Over",
         font_name="Config Rounded Bold",
         font_size=48,
-        color=(255, 46, 52, 1),
+        color=(255, 46, 52, 255),
         x=x,
         y=y,
         anchor_x="center",

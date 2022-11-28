@@ -59,26 +59,22 @@ class Word:
         self.triedLabel.draw()
 
     def press(self, key: str) -> None:
-        try:
-            if self.wrong <= 5:
-                found: bool = False
+         if self.__wrong <= 5:
+               found: bool = False
 
-                for i in range(len(self.correctWord)):
-                    if self.correctWord[i] == key:
-                        self.word[i] = key
-                        found = True
-                        self.correct += 1
+               for i in range(len(self.correctWord)):
+                  if self.correctWord[i] == key:
+                     self.word[i] = key
+                     found = True
+                     self.__correct += 1
 
-                if not found:
-                    if key not in self.tried:
-                        self.tried.append(key)
-                        self.wrong += 1
-                        self.set_wrong()
+               if not found:
+                  if key not in self.tried:
+                     self.tried.append(key)
+                     self.set_wrong()
 
-                self.updateLabel()
-                self.score.calculateScore(self.wrong, self.correctWord, key)
-        except:
-            raise ValueError("Jogo não iniciado")
+               self.updateLabel()
+               self.score.calculateScore(self.__wrong, self.correctWord, key)
 
     def drawWinner(self) -> bool:
         flagWinner: bool = False
@@ -95,7 +91,7 @@ class Word:
     def drawLoser(self) -> bool:
         flagLoser: bool = False
 
-        if self.wrong > 5:
+        if self.__wrong > 5:
             self.tried = []
             self.word = []
 
