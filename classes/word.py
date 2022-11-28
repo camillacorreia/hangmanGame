@@ -66,7 +66,7 @@ class Word:
                   if self.correctWord[i] == key:
                      self.word[i] = key
                      found = True
-                     self.__correct += 1
+                     self.set_correct()
 
                if not found:
                   if key not in self.tried:
