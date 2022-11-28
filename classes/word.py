@@ -24,8 +24,6 @@ class Word:
 
         self.gameOver: GameOver = GameOver()
 
-        self.errors: int = 0
-
         # Labels do jogo
         self.wordLabel = None
         self.triedLabel = None
